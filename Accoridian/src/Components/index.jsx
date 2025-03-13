@@ -37,9 +37,17 @@ function Accordian() {
                     <h3>{dataitem.ques}</h3>
                     <span className='plus' onClick={multiselection ? () => handle(dataitem.id) : () => handleClick(dataitem)}> + </span>
                     <div>
-                        {dataitem.id === setselected || multi.indexOf(dataitem.id) !== -1 ?
+                        {
+                           multiselection?
+                           multi.indexOf(dataitem.id) !==-1 && <div>{dataitem.ans}</div> :
+                           dataitem.id === setselected && <div>{dataitem.ans}</div>
+                        }
+
+{/* --------------------------------Alternative of above code in Sort---------------- */}
+
+                        {/* {dataitem.id === setselected || multi.indexOf(dataitem.id) !== -1 ?
                             <div>{dataitem.ans}</div> :
-                            null}
+                            null} */}
                     </div>
                 </div>
 
